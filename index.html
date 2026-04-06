@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Instagram Feed Bootstrap</title>
+
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+
+  <style>
+    body {
+      background-color: #f5f5f5;
+    }
+
+    .top-icons i {
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .active-icon {
+      color: blue;
+    }
+
+    .inactive-icon {
+      color: gray;
+    }
+
+    .grid-img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+
+    .post-card {
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .post-header {
+      font-weight: bold;
+    }
+
+    .post-date {
+      color: gray;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-light bg-white border-bottom px-3">
+    <div class="container-fluid">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+        <i class="fa-brands fa-instagram"></i>
+        <span>Instagram</span>
+      </a>
+
+      <div class="d-flex align-items-center gap-2">
+        <button
+          class="btn btn-success"
+          data-bs-toggle="modal"
+          data-bs-target="#postModal"
+        >
+          Create a new post
+        </button>
+
+        <div class="dropdown">
+          <button
+            class="btn btn-secondary dropdown-toggle"
+            type="button"
+            data-bs-toggle="dropdown"
+          >
+            <i class="fa-solid fa-gear"></i>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" href="#">Profile</a></li>
+            <li><a class="dropdown-item" href="#">Accessibility</a></li>
+            <li><a class="dropdown-item" href="#">Privacy and Data</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item text-danger" href="#">Log out</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Top icons -->
+  <div class="text-center my-3 top-icons">
+    <i class="fa-solid fa-table-cells active-icon me-3" id="gridBtn"></i>
+    <i class="fa-solid fa-square inactive-icon" id="listBtn"></i>
+  </div>
+
+  <!-- Grid View -->
+  <div class="container" id="gridView">
+    <div class="row g-2">
+      <div class="col-md-4 col-sm-6">
+        <img class="grid-img" src="https://picsum.photos/id/1015/500/500" alt="img1">
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <img class="grid-img" src="https://picsum.photos/id/1025/500/500" alt="img2">
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <img class="grid-img" src="https://picsum.photos/id/1035/500/500" alt="img3">
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <img class="grid-img" src="https://picsum.photos/id/1043/500/500" alt="img4">
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <img class="grid-img" src="https://picsum.photos/id/1050/500/500" alt="img5">
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <img class="grid-img" src="https://picsum.photos/id/1060/500/500" alt="img6">
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <img class="grid-img" src="https://picsum.photos/id/1074/500/500" alt="img7">
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <img class="grid-img" src="https://picsum.photos/id/1084/500/500" alt="img8">
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <img class="grid-img" src="https://picsum.photos/id/1080/500/500" alt="img9">
+      </div>
+    </div>
+  </div>
+
+  <!-- List View -->
+  <div class="container d-none" id="listView">
+    <div class="post-card bg-white border mb-4">
+      <div class="d-flex justify-content-between p-3">
+        <span class="post-header">My first photo</span>
+        <span class="post-date">12/14</span>
+      </div>
+      <img class="w-100" src="https://picsum.photos/id/1015/700/500" alt="post1">
+      <div class="p-3">
+        <p><strong>204 Likes</strong></p>
+        <p>This is my first photo of the feed. This is a multi line comment for testing purposes. I am learning to code with Bootstrap.</p>
+      </div>
+    </div>
+
+    <div class="post-card bg-white border mb-4">
+      <div class="d-flex justify-content-between p-3">
+        <span class="post-header">Some cute thing</span>
+        <span class="post-date">12/17</span>
+      </div>
+      <img class="w-100" src="https://picsum.photos/id/1025/700/500" alt="post2">
+      <div class="p-3">
+        <p><strong>350 Likes</strong></p>
+        <p>This one is another example post. It is supposed to look like the simple feed from the assignment, not too fancy.</p>
+      </div>
+    </div>
+
+    <div class="post-card bg-white border mb-4">
+      <div class="d-flex justify-content-between p-3">
+        <span class="post-header">And of course... food!</span>
+        <span class="post-date">12/18</span>
+      </div>
+      <img class="w-100" src="https://picsum.photos/id/1080/700/500" alt="post3">
+      <div class="p-3">
+        <p><strong>412 Likes</strong></p>
+        <p>Because every feed needs random posts. You can switch these images later if you want.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="postModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Create a new post</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <div class="modal-body">
+          <label class="form-label">Caption:</label>
+          <textarea
+            class="form-control mb-3"
+            rows="3"
+            placeholder="Add the caption of your post here"
+          ></textarea>
+
+          <div>
+            <button class="btn btn-light border">
+              <i class="fa-solid fa-camera"></i>
+            </button>
+            <button class="btn btn-light border">
+              <i class="fa-solid fa-location-dot"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+            Close
+          </button>
+          <button type="button" class="btn btn-success">Publish</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const gridBtn = document.getElementById("gridBtn");
+    const listBtn = document.getElementById("listBtn");
+    const gridView = document.getElementById("gridView");
+    const listView = document.getElementById("listView");
+
+    gridBtn.addEventListener("click", function () {
+      gridView.classList.remove("d-none");
+      listView.classList.add("d-none");
+
+      gridBtn.classList.add("active-icon");
+      gridBtn.classList.remove("inactive-icon");
+
+      listBtn.classList.add("inactive-icon");
+      listBtn.classList.remove("active-icon");
+    });
+
+    listBtn.addEventListener("click", function () {
+      listView.classList.remove("d-none");
+      gridView.classList.add("d-none");
+
+      listBtn.classList.add("active-icon");
+      listBtn.classList.remove("inactive-icon");
+
+      gridBtn.classList.add("inactive-icon");
+      gridBtn.classList.remove("active-icon");
+    });
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
